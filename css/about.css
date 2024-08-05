@@ -1,0 +1,92 @@
+.hero-bg {
+  background: url(../assets/figma-imgs/about_background.png) no-repeat center;
+  height: 522px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .about-hero-txt {
+    min-width: 204px;
+    width: 560px;
+    margin-left: 50%;
+    margin-right: 5%;
+  }
+  h1 {
+    color: #0a3641;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 120%; /* 96px */
+    margin: 24px auto;
+  }
+  h6 {
+    margin: 0;
+    color: #0a3641;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%; /* 27px */
+  }
+}
+
+.abt-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 5% 10%;
+
+  h2 {
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 120%; /* 57.6px */
+    letter-spacing: 20px;
+  }
+  p {
+    color: #000;
+    font-weight: 400;
+    line-height: 30px; /* 166.667% */
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .hero-bg {
+    .about-hero-txt {
+      min-width: 204px;
+      width: 560px;
+      margin-left: 50%;
+      margin-right: 5%;
+    }
+    h1 {
+      font-size: 60px;
+    }
+    h6 {
+      font-size: 16px;
+      font-style: normal;
+    }
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .hero-bg {
+    .about-hero-txt {
+      min-width: 204px;
+      width: 560px;
+      margin-left: 40%;
+      margin-right: 5%;
+    }
+    h1 {
+      font-size: 50px;
+    }
+    h6 {
+      font-size: 16px;
+    }
+  }
+
+  .abt-info {
+    h2 {
+      font-size: 35px;
+    }
+  }
+}
