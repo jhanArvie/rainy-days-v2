@@ -70,14 +70,20 @@
 
 .single-product {
   min-width: 200px;
+  max-width: 200px;
   scroll-snap-align: start;
 }
 
 .single-product .img-container {
+  width: 200px;
+  height: 250px;
   position: relative;
+  border-radius: 5px;
+  background-color: #fff;
   a img {
     width: 200px;
-    border-radius: 5px;
+    height: 250px;
+    object-fit: contain;
   }
   .sale-txt {
     font-size: 1rem;
@@ -85,7 +91,7 @@
     background: red;
     padding: 2px 4px 2px 1px;
     margin: 0;
-    visibility: hidden;
+    border-radius: 5px;
   }
 }
 
@@ -114,14 +120,16 @@
 .product-amount {
   display: flex;
   justify-content: flex-end;
-  button {
-    font-size: 2rem;
+  align-items: center;
+  i {
+    font-size: 1rem;
+    color: #000;
     background: transparent;
     border: none;
     cursor: pointer;
   }
 
-  h4 {
+  .quantity {
     font-size: 1.125rem;
     color: #000;
     margin: 1rem;
@@ -137,7 +145,7 @@
 
   .gender-buttons {
     display: flex;
-    gap: 3rem;
+    gap: 1rem;
   }
 
   .gender-buttons button {
@@ -265,7 +273,7 @@
   .product-amount {
     display: flex;
     justify-content: flex-end;
-    button {
+    i {
       font-size: 2rem;
       background: transparent;
       border: none;
@@ -286,7 +294,6 @@
 
     .gender-buttons {
       display: flex;
-      gap: 1.5rem;
     }
 
     .gender-buttons button {
