@@ -87,10 +87,13 @@ nav ul {
     font-size: 1.5rem;
   }
   .cartAmount {
-    border-radius: 8px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50px;
     background: red;
     color: #fff;
-    font-size: 1.25rem;
+    font-size: 1rem;
     position: absolute;
     top: -10px;
     right: -13px;

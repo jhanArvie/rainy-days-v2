@@ -162,6 +162,10 @@
   .gender-buttons button:hover {
     text-decoration: underline;
   }
+  .gender-buttons button.active {
+    text-decoration: underline; /* Adjust color and thickness as needed */
+    color: #0a3641;
+  }
 }
 
 @media only screen and (max-width: 500px) {
