@@ -9,6 +9,10 @@
       content="Stay dry and stylish with RainyDays' high-quality rain jackets. Discover our range of waterproof jackets designed for ultimate comfort and protection in any weather. Shop now for fashion-forward rain gear that keeps you looking great, rain or shine."
     />
     <link rel="stylesheet" href="../css/global.css" />
+    <script
+      src="https://kit.fontawesome.com/f2f205cf80.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <header>
@@ -24,11 +28,54 @@
       <a class="nav-logo" href="../index.html"
         ><img src="../assets/icons/RainyDays_Logo.png" alt="Logo"
       /></a>
-      <a class="nav-cart" href="../checkout/index.html"
-        ><img src="../assets/icons/shopping_basket.png" alt="Shopping Basket"
-      /></a>
+      <div class="nav-cart">
+        <a href="./checkout/index.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div class="cartAmount">0</div>
+        </a>
+      </div>
     </header>
-    <main></main>
+    <main>
+      <section class="main-container product-container-message">
+        <div class="product-img-container">
+          <h2 class="sale-txt">SALE</h2>
+          <img src="" alt="" />
+        </div>
+
+        <div class="product-information">
+          <h1></h1>
+          <h2></h2>
+          <div class="size-amount-container">
+            <div class="size-dropdown-container">
+              <div class="size-dropdown">
+                <select class="select-size" id=""></select>
+              </div>
+            </div>
+
+            <div class="product-amount" data-id="">
+              <i class="fa-solid fa-minus"></i>
+              <div class="quantity">0</div>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </div>
+
+          <div class="overview-info">
+            <p><strong>Overview:</strong></p>
+            <p class="base-color">
+              <strong>Base Color:</strong> <span>"Blue"</span>
+            </p>
+            <p class="tag-product">
+              <strong>Tags:</strong> <span>"jacket" "mens"</span>
+            </p>
+            <p class="description">
+              The Men's Rainy Days Gelventure jacketis the easy answer to all
+              your commuting needs, whether in the city or forest
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer>
       <div class="contact-container">
         <h3>Contact us</h3>
@@ -55,5 +102,8 @@
         <button>Confirm</button>
       </div>
     </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/product.js"></script>
   </body>
 </html>

@@ -53,7 +53,7 @@ function displayProducts(products, containerId) {
         productElement.innerHTML = `
             <div class="img-container">
                 ${product.onSale ? '<h2 class="sale-txt">SALE</h2>' : ''}
-                <a href="./product/index.html">
+                <a href="../product/index.html?id=${product.id}">
                     <img src="${product.image}" alt="${product.title}" />
                 </a>
             </div>
@@ -62,7 +62,7 @@ function displayProducts(products, containerId) {
                 <h3>Kr ${product.onSale ? product.discountedPrice : product.price}</h3>
                 <div class="size-dropdown-container">
                     <div class="size-dropdown">
-                        <select class="select-size">
+                        <select class="select-size" name"size">
                             ${sizesOptions}
                         </select>
                     </div>

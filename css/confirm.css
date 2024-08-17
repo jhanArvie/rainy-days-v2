@@ -1,5 +1,5 @@
 .confirm-hero {
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -7,6 +7,9 @@
   border-radius: 20px;
   background: #0a3641;
   margin-top: 5rem;
+  margin-left: 10%;
+  margin-right: 10%;
+
   h1 {
     padding-top: 2rem;
     text-align: center;
@@ -19,6 +22,10 @@
     margin-top: 0;
     margin-bottom: 2rem;
     font-size: 1.25rem;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 }
 
