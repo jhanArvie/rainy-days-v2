@@ -138,9 +138,13 @@ function updatePaymentTotal() {
     const taxTotalElement = document.getElementById('taxTotal');
     const paymentTotalElement = document.getElementById('paymentTotal');
 
-    // Get the values and convert them to numbers
+    // Set shipping cost based on cart items
+    const totalQuantity = getTotalQuantity();
+    const shippingCost = totalQuantity > 0 ? 100.00 : 0.00;
+    shippingCostElement.textContent = shippingCost.toFixed(2);
+
+    // Get the basket total and tax total
     const basketTotal = parseFloat(basketTotalElement.textContent);
-    const shippingCost = parseFloat(shippingCostElement.textContent);
     const taxTotal = parseFloat(taxTotalElement.textContent);
 
     // Calculate the payment total
@@ -148,6 +152,11 @@ function updatePaymentTotal() {
 
     // Update the payment total element
     paymentTotalElement.textContent = paymentTotal.toFixed(2);
+
+    // Enable or disable the confirm button based on cart status
+    const confirmCartBtn = document.getElementById('confirmCartBtn');
+    confirmCartBtn.style.pointerEvents = totalQuantity > 0 ? 'auto' : 'none';
+    confirmCartBtn.style.opacity = totalQuantity > 0 ? '1' : '0.5';
 }
 
 // Update the total price and payment total when the cart is refreshed
