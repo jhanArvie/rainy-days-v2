@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rainydays</title>
+    <meta
+      name="description content"
+      content="Stay dry and stylish with RainyDays' high-quality rain jackets. Discover our range of waterproof jackets designed for ultimate comfort and protection in any weather. Shop now for fashion-forward rain gear that keeps you looking great, rain or shine."
+    />
+    <link rel="stylesheet" href="../css/global.css" />
+    <script
+      src="https://kit.fontawesome.com/f2f205cf80.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header>
+      <nav class="">
+        <ul id="menu">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about_us/index.html">About Us</a></li>
+        </ul>
+        <div class="menu-button">
+          <img src="../assets/icons/menu_button.png" alt="Navigation Button" />
+        </div>
+      </nav>
+      <a class="nav-logo" href="../index.html"
+        ><img src="../assets/icons/RainyDays_Logo.png" alt="Logo"
+      /></a>
+      <div class="nav-cart">
+        <a href="../checkout/index.html">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <div class="cartAmount">0</div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="basket-items-txt">
+        <h1>Basket Items</h1>
+        <p><strong id="basketItems"></strong> in your basket</p>
+      </section>
+
+      <section class="scroll-parent">
+        <div class="cart-container-checkout">
+          <div class="header-checkout">
+            <span>Product</span>
+            <span>Price</span>
+            <span>Quantity</span>
+            <span>Total Price</span>
+          </div>
+
+          <div class="empty-cart-notice">
+            <p>Your cart is currently empty. Please select an item.</p>
+          </div>
+
+          <!--  Cart Product DOM -->
+          <div id="cartDOM">
+            <!-- <div class="product-container-checkout" id="cartDOM">
+              <div class="prod-details-checkout">
+                <div class="prod-img-checkout">
+                  <span class="cart-sale-text">Sale</span>
+                  <img src="../assets/figma-imgs/red_jacket.png" alt="Sample" />
+                </div>
+                <div class="product-details">
+                  <h3>Title</h3>
+                  <p>Size - <span id="sizeCheckout">M</span></p>
+                  <p>gender</p>
+                </div>
+              </div>
+              <div class="item-price">kr 100.00</div>
+              <div class="item-quantity" id="amountCheckout">
+                <button>-</button>
+                <span id="perProductQuantity">0</span>
+                <button>+</button>
+              </div>
+              <div class="item-total">kr 100.00</div>
+            </div> -->
+          </div>
+          <!-- Cart Product DOM ends here -->
+        </div>
+      </section>
+
+      <h2 class="info-title-checkout">Personal and Payment Information</h2>
+
+      <section class="per-info-container">
+        <div class="personal-info">
+          <h2>Personal Information</h2>
+          <form action="">
+            <div class="form-group">
+              <label for="first-name">Name</label>
+              <div class="name-fields">
+                <input
+                  type="text"
+                  class="2"
+                  id="first-name"
+                  placeholder="First Name"
+                />
+                <input
+                  type="text"
+                  class="2"
+                  id="last-name"
+                  placeholder="Last Name"
+                />
+              </div>
+            </div>
+            <div class="form-group address-box">
+              <label for="address">Address</label>
+              <input type="text" id="street" placeholder="Street" />
+              <div class="address-fields">
+                <input type="text" id="city" placeholder="State/City" />
+                <input type="text" id="country" placeholder="Country" />
+                <input type="text" id="zip" placeholder="ZIP Code" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" placeholder="Email Address" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" placeholder="Phone" />
+            </div>
+          </form>
+        </div>
+
+        <div class="payment-info">
+          <h2>Payment Information</h2>
+          <form>
+            <div class="form-group">
+              <label for="card-name">Card Holder Name</label>
+              <input
+                type="text"
+                id="card-name"
+                placeholder="Card Holder Name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="card-number">Card Number</label>
+              <input
+                type="text"
+                id="card-number"
+                placeholder="**** **** **** ****"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exp-date">Expiration Date</label>
+              <div class="expiration-fields">
+                <input type="text" id="exp-month" placeholder="Month" />
+                <input type="text" id="exp-year" placeholder="Year" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ccv">Expiration Date</label>
+              <input type="text" id="ccv" placeholder="CCV" />
+            </div>
+          </form>
+        </div>
+
+        <div class="summary-total">
+          <h2>Total</h2>
+          <div class="summary-item">
+            <span>Basket total</span> <span>kr</span>
+            <span id="basketTotal">300.00</span>
+          </div>
+
+          <div class="summary-item">
+            <span>Shipping</span><span>kr</span
+            ><span id="shippingCost">100.00</span>
+          </div>
+          <div class="summary-item">
+            <span>Tax (<span id="taxPercentage">20%</span>)</span>
+            <span>kr</span><span id="taxTotal"></span>
+          </div>
+          <div class="summary-item payment-total">
+            <span>Payment Total</span><span>kr</span
+            ><span id="paymentTotal">400.00</span>
+          </div>
+          <div class="checkout-btn-confirm">
+            <a href="../checkout/confirmation/index.html" id="confirmCartBtn"
+              ><span class="confirm-btn">Confirm</span></a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="contact-container">
+        <h3>Contact us</h3>
+        <p>Our friendly team would love to hear from you.</p>
+        <div class="contact-info">
+          <div>
+            <img src="../assets/icons/Email_icon.svg" alt="Email Icon" />
+            <p>rainyday@rainy.com</p>
+          </div>
+          <div>
+            <img src="../assets/icons/Pin_icon.svg" alt="Phone Icon" />
+            <p>+47 123 132 12</p>
+          </div>
+          <div>
+            <img src="../assets/icons/Phone_icon.svg" alt="Phone Icon" />
+            <p>123 Sample St, Sydney NSW 2000 AU</p>
+          </div>
+        </div>
+      </div>
+      <div class="join-us-container">
+        <h4>RAINYDAYS</h4>
+        <p>Join our newsletter to stay up to date on features and releases.</p>
+        <input type="text" placeholder="  Enter Your Email" />
+        <button>Confirm</button>
+      </div>
+    </footer>
+
+    <script src="../js/nav.js"></script>
+    <script src="../js/checkout.js"></script>
+  </body>
+</html>

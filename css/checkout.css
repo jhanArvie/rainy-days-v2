@@ -1,0 +1,258 @@
+.basket-items-txt {
+  color: #000;
+  font-size: 1.125rem;
+  font-weight: 400;
+  margin: 2rem auto 3rem 10%;
+
+  p {
+    margin: 0;
+  }
+}
+
+.scroll-parent {
+  overflow-x: auto; /* parent for scrolling on horizontally and set the child to fix width*/
+}
+
+.empty-cart-notice {
+  text-align: center;
+  margin-top: 4rem;
+  display: none; /* change to block to display the content */
+}
+
+.cart-container-checkout {
+  width: 750px;
+  background-color: #0a3641;
+  padding: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.5);
+  min-height: 200px;
+}
+
+.header-checkout,
+.product-container-checkout {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr; /* divide it in four columns with 1st column bigger */
+  border-bottom: 1px solid #fff;
+  align-items: center;
+}
+
+.header-checkout {
+  text-align: center;
+}
+
+.product-container-checkout {
+  padding: 1rem 0;
+}
+
+.prod-details-checkout {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.prod-img-checkout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  width: 110px;
+  padding: 0.75rem;
+  position: relative;
+  border-radius: 5px;
+  .cart-sale-text {
+    font-size: 12px;
+    position: absolute;
+    background-color: red;
+    padding: 0.5px 1px;
+    border-radius: 2px;
+    top: 5px;
+    left: 5px;
+  }
+}
+.item-price,
+.item-total {
+  justify-self: center;
+  color: #ffd700;
+}
+.product-details {
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 14px;
+  }
+}
+
+.item-quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+
+  button {
+    font-size: 1.5rem;
+  }
+}
+
+.info-title-checkout {
+  min-width: 100px;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  margin-left: 10%;
+  color: #000;
+}
+
+.per-info-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 750px;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.personal-info {
+  color: #000;
+  margin: 1px;
+  width: 80%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  margin-bottom: 1rem;
+}
+
+.personal-info {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1.5px solid #000;
+  }
+}
+
+.name-fields,
+.address-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.payment-info {
+  background-color: #0a3641;
+  width: 80%;
+}
+
+.payment-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem auto;
+  border-radius: 20px;
+  padding: 2rem;
+  max-height: 500px;
+
+  h2 {
+    align-self: flex-start;
+  }
+  input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1.5px solid #000;
+  }
+
+  .expiration-fields {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.summary-total {
+  color: #000;
+  background-color: #b0d8e6;
+  min-width: 200px;
+  padding: 1rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  margin: 2rem;
+
+  .summary-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    margin: 1rem;
+
+    :nth-child(1) {
+      justify-self: flex-start;
+    }
+    :nth-child(2) {
+      justify-self: flex-end;
+    }
+    :nth-child(3) {
+      justify-self: flex-end;
+    }
+  }
+
+  .payment-total {
+    border-top: 2px solid #000;
+    padding-top: 1rem;
+    font-weight: 600;
+  }
+
+  .checkout-btn-confirm {
+    .confirm-btn {
+      text-align: center;
+      padding: 1rem;
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: 0.9px;
+      margin-top: 2rem;
+      border-radius: 8px;
+      height: 3rem;
+      color: white;
+      width: 100%;
+      background-color: #0a3641;
+    }
+
+    .confirm-btn:hover {
+      background-color: #0e4957;
+    }
+  }
+}
+
+@media screen and (min-width: 751px) {
+  .scroll-parent {
+    display: flex;
+    justify-content: center;
+  }
+
+  .payment-info,
+  .personal-info {
+    width: 40%;
+    margin: 0.5rem;
+  }
+
+  .payment-info {
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .cart-container-checkout {
+    width: 1000px;
+  }
+
+  .per-info-container {
+    max-width: 1000px;
+  }
+}
