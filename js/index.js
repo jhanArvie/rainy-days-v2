@@ -58,7 +58,7 @@ function displayProducts(products, containerId) {
                 </a>
             </div>
             
-            <a href="../product/index.html?id=${product.id}">${product.title}</a>
+            <a href="../product/index.html?id=${product.id}"><h4>${product.title}</h4></a>
             <div class="price-size">
                 <h3>Kr ${product.onSale ? product.discountedPrice : product.price}</h3>
                 <div class="size-dropdown-container">
