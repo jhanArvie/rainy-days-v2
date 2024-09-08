@@ -64,7 +64,7 @@ function displayProducts(products, containerId) {
     productElement.innerHTML = `
             <div class="img-container">
                 ${product.onSale ? '<h2 class="sale-txt">SALE</h2>' : ""}
-                <a href="../product/index.html?id=${product.id}">
+                <a href="product/index.html?id=${product.id}">
                     <img src="${product.image}" alt="${product.title}" />
                 </a>
             </div>
