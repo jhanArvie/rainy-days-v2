@@ -19,6 +19,10 @@ function saveCart() {
 
 async function fetchData() {
   try {
+    // Show loading indicators before fetching data
+    document.getElementById("productsContainerSale").innerHTML = '<div class="loading-spinner"><div class="spinner"></div><p>Loading products...</p></div>';
+    document.getElementById("productsContainerGender").innerHTML = '<div class="loading-spinner"><div class="spinner"></div><p>Loading products...</p></div>';
+    
     const response = await fetch("https://api.noroff.dev/api/v1/rainy-days");
     const data = await response.json();
     productsArray = data; // console.log('Fetched Products:', productsArray);
@@ -27,6 +31,9 @@ async function fetchData() {
     updateCartAmount(); // Function to update the cart amount display when page is refreshed
   } catch (error) {
     console.error("Error fetching data:", error);
+    // Show error message in containers if fetch fails
+    document.getElementById("productsContainerSale").innerHTML = '<div class="error-message">Failed to load products. Please check your internet connection or try again later.</div>';
+    document.getElementById("productsContainerGender").innerHTML = '<div class="error-message">Failed to load products. Please check your internet connection or try again later.</div>';
   }
 }
 

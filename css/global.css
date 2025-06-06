@@ -8,7 +8,7 @@
 
 *,
 *:before,
-ssss *:after {
+*:after {
   box-sizing: inherit;
 }
 
@@ -39,4 +39,41 @@ main,
 article {
   max-width: 1600px;
   margin: auto;
+}
+
+/* Loading spinner and error message styles */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  width: 100%;
+  color: #333;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #0A3641;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(231, 76, 60, 0.1);
+  border-radius: 5px;
+  margin: 1rem 0;
+  font-weight: 500;
 }
