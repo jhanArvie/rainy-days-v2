@@ -169,10 +169,27 @@ function refreshCartDisplay() {
     updatePaymentTotal(); // Update the payment total when the cart is refreshed
 }
 
+// Save order details to local storage for the confirmation page
+function saveOrderDetails() {
+    if (arrayCart.length === 0) return;
+    
+    const orderDetails = {
+        items: arrayCart,
+        totalQuantity: getTotalQuantity(),
+        totalAmount: getTotalPrice() + parseFloat(document.getElementById('shippingCost').textContent) + parseFloat(document.getElementById('taxTotal').textContent),
+        orderDate: new Date().toISOString()
+    };
+    
+    localStorage.setItem('lastOrder', JSON.stringify(orderDetails));
+}
+
 // Clear the cart in local storage after confirming the order
 function clearCartAfterConfirmation() {
     const confirmCartBtn = document.getElementById('confirmCartBtn');
     confirmCartBtn.addEventListener('click', () => {
+        // Save order details before clearing the cart
+        saveOrderDetails();
+        
         cart = {}; // Clear the cart object
         updateLocalStorage(); // Update the local storage
         refreshCartDisplay(); // Refresh the display
