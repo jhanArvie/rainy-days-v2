@@ -10,7 +10,6 @@ async function fetchAndDisplayProduct(productId) {
         const product = await response.json();
         displayProduct(product);
     } catch (error) {
-        console.error('Error fetching product:', error);
         displayErrorMessage("Failed to load product. Please check your internet connection or try again later.");
     }
 }
