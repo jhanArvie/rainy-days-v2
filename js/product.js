@@ -1,6 +1,22 @@
 // Fetch and display the product based on ID
 async function fetchAndDisplayProduct(productId) {
     try {
+        // Show loading indicator before fetching data
+        const productContainer = document.querySelector('.product-container-message');
+        
+        // Create a loading overlay instead of replacing the entire container
+        const loadingOverlay = document.createElement('div');
+        loadingOverlay.className = 'loading-overlay';
+        loadingOverlay.innerHTML = `
+            <div class="loading-spinner product-loading">
+                <div class="spinner"></div>
+                <p>Loading product details...</p>
+            </div>
+        `;
+        
+        // Add the loading overlay to the beginning of the container
+        productContainer.prepend(loadingOverlay);
+        
         const response = await fetch(`https://api.noroff.dev/api/v1/rainy-days/${productId}`);
         
         if (!response.ok) {
@@ -8,6 +24,12 @@ async function fetchAndDisplayProduct(productId) {
         }
         
         const product = await response.json();
+        
+        // Remove the loading overlay before displaying the product
+        if (loadingOverlay && loadingOverlay.parentNode) {
+            loadingOverlay.parentNode.removeChild(loadingOverlay);
+        }
+        
         displayProduct(product);
     } catch (error) {
         displayErrorMessage("Failed to load product. Please check your internet connection or try again later.");
